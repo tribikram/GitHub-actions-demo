@@ -1,10 +1,12 @@
-name: Hello World
+name: Github Action Demo
 on: push
 jobs:
-  build:
+  action-demo:
     runs-on: ubuntu-latest
     steps:
-      - name: Build Step
-        run: echo "Secret ${{secrets.DOCKER_PASSWORD}}"
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Print index.html file
+        run: cat index.html
   
   
