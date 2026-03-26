@@ -6,9 +6,16 @@ on:
         description: Choose the env to deploy
         required: true
         default: dev
+        options:
+          - dev
+          - trial
+          - prod
+      artifact_tag:
+        description: Choose the git tag to deploy
+        required: true
 jobs:
   inputs-demo:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy the App
-        run: echo "Deploying the application to ${{inputs.environment}}"
+        run: echo "Deploying the ${{inputs.artifact_tag}} application to ${{inputs.environment}}"
