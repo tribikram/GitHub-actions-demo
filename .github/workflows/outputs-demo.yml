@@ -3,12 +3,13 @@ on: push
 jobs:
   build:
     outputs:
-      version: ${{steps.step1.outputs.version}}
+      version: ${{steps.step1.outputs.version7}}
     runs-on: ubuntu-latest
     steps:
       - name: Build Step
         id: step1
         run: echo "version7=0.0.1" >> $GITHUB_OUTPUT
+        
   deploy:
     needs: build
     runs-on: ubuntu-latest
