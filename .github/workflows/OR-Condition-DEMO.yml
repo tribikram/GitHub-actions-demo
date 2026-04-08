@@ -8,3 +8,6 @@ jobs:
       - name: Run only certain users
         if: github.actor == 'tribikram'
         run: echo "Triggered By Tribikram D"
+      - name: Run if user is not Tri
+        if: github.actor != 'tribikram1'
+        run: echo "Running this bacause campare was with tribikram1"
