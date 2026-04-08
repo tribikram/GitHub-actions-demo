@@ -1,0 +1,10 @@
+name: OR Condition DEMO
+on:
+  push:
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run only certain users
+        if: github.actor == 'tribikram'
+        run: echo "Triggered By Tribikram"
